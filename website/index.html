@@ -109,17 +109,6 @@
       </div>
       <iframe id="sidebar" src="sidebar.html"></iframe>
     </div>
-      <script>
-        // get all the links in the sidebar
-var links = document.querySelectorAll('#sidebar a');
-
-// loop through the links and add a click event listener
-for (var i = 0; i < links.length; i++) {
-  links[i].addEventListener('click', function(e) {
-    e.preventDefault(); // prevent the default link behavior
-    window.top.location.href = this.href; // redirect the parent page
-  });
-}
-      </script>
+     
     </body>
   </html> 
