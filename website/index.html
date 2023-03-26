@@ -43,7 +43,36 @@
         max-width: 100%;
         height: auto;
       }
+      /* Style the iframe to be on the side */
+      #sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 20%;
+        border: none;
+      }
+      
+      /* Style the links in the sidebar to redirect the parent page */
+      #sidebar a {
+        display: block;
+        padding: 10px;
+        color: white;
+        background-color: #333;
+        text-decoration: none;
+      }
     </style>
+    <script>
+      // get all the links in the sidebar
+      var links = document.querySelectorAll('#sidebar a');
+      // loop through the links and add a click event listener
+      links.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault(); // prevent the default link behavior
+          window.top.location.href = this.href; // redirect the parent page
+        });
+      });
+    </script>
   </head>
   <body>
     <!-- Main heading of the website -->
@@ -89,5 +118,6 @@
         <!-- Link to the page with uncategorized pictures -->
         <a href="P/Uncategorized.html">Uncategorized</a>
       </div>
+      <iframe id="sidebar" src="sidebar.html"></iframe>
     </body>
   </html> 
